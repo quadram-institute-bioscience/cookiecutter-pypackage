@@ -76,38 +76,41 @@ Then:
 
 Worked Example
 --------------
+Getting started
+
+.. code-block:: bash
 
     cd ~/code # Some directory where you want your code
     pip install -U cookiecutter
     cookiecutter https://github.com/happykhan/qi-python-package    
-    # Follow the cookiecutter interactive prompts 
+    # Follow the cookiecutter interactive prompts; I created a project called 'the best program'
+    # Add a repo for github at https://github.com/new 
+    cd the_best_program # folder with the new template code
+    git init
+    git add .gitignore .travis.yml  *
+    git commit -m 'The beginning of something great'
+    git remote add origin git@github.com:happykhan/the-best-program.git
+    git push -u origin master
+    # Go to https://travis-ci.org/account/repositories & add the repo. e.g. 'the-best-program'
+    # Create a virtualenv 
+    virtualenv -p /usr/bin/python3 .venv
+    source .venv/bin/activate
+    pip install -r requirements_dev.txt
+    # Add the repo in https://readthedocs.org/dashboard/import/
+    # Add the repo in https://pyup.io/account/repos/add/ 
+    
 
-full_name [Nabil-Fareed Alikhan]: 
-email [nabil-fareed.alikhan@quadram.ac.uk]: 
-github_username [happykhan]: 
-project_name [QI python project]: The Best program 
-project_slug [the_best_program]: 
-project_short_description [This project does the bioinformatics]: Takes reads and writes nature papers. 
-pypi_username [happykhan]: 
-version [0.1.0]: 
-use_pytest [n]: 
-use_pypi_deployment_with_travis [y]: 
-add_pyup_badge [n]: y
-Select command_line_interface:
-1 - Click
-2 - No command-line interface
-Choose from 1, 2 (1, 2) [1]: 
-create_author_file [y]: 
-Select open_source_license:
-1 - GNU General Public License v3
-2 - MIT license
-3 - BSD license
-4 - ISC license
-5 - Apache Software License 2.0
-6 - Not open source
-Choose from 1, 2, 3, 4, 5, 6 (1, 2, 3, 4, 5, 6) [1]: 
+Now start writing code, be sure to commit changes to github regularly, write tests, and document your program. When you want to package your project, try the following:
+
+.. code-block:: bash
+
+    # Create wheels/binaries for pypi
+    python3 setup.py sdist bdist_wheel
+    # Upload to pypi using twine.
+    twine upload  dist/*
 
 
+    
 
 For more details, see the `cookiecutter-pypackage tutorial`_.
 
