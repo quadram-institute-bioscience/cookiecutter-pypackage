@@ -15,6 +15,7 @@ Features
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
+* Dockerfile included.
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
@@ -67,6 +68,7 @@ Then:
 * Add a `requirements.txt` file that specifies the packages you will need for
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Activate your project on `pyup.io`_.
+* Activate your project on `Docker`_.
 * **If you can change the default values for projects in cookiecutter.json**
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
@@ -96,6 +98,7 @@ Getting started
     pip install -r requirements_dev.txt
     # Add the repo in https://readthedocs.org/dashboard/import/
     # Add the repo in https://pyup.io/account/repos/add/ 
+    # Add the repo in https://hub.docker.com
     # If you're developing for Windows, add your repo to appveyor https://ci.appveyor.com/projects
     
 
@@ -125,3 +128,4 @@ For more details, see the `cookiecutter-pypackage tutorial`_.
 .. _Bumpversion: https://github.com/peritus/bumpversion
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
+.. _Docker: https://hub.docker.com
