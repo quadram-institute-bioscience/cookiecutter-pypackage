@@ -6,8 +6,8 @@ Cookiecutter PyPackage
      :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
      :alt: Updates
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage     
+.. image:: https://travis-ci.org/happykhan/qi-python-package.svg?branch=master
+    :target: https://travis-ci.org/happykhan/qi-python-package     
 
 Cookiecutter_ template for a Python package.
 
@@ -53,7 +53,7 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+    cookiecutter https://github.com/happykhan/qi-python-package
 
 Then:
 
