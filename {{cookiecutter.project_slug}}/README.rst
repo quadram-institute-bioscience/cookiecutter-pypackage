@@ -4,22 +4,19 @@
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
 {% if is_open_source %}
-|Linux| |Windows| |Documentation| |pypi| |Coverage| |Code quality| |Docker build|
+|Linux| |Windows| |Documentation| |pypi| |Docker build|
 
-{%- endif %}
+|Coverage| |Code quality| {% if cookiecutter.add_pyup_badge == 'y' %} |pyup| {% endif %}
 
 {% if cookiecutter.add_pyup_badge == 'y' %}
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg
+.. |pyup| image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg
      :target: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/
      :alt: Updates
-{% endif %}
-
+{% endif %}{%- endif %}
 
 {{ cookiecutter.project_short_description }}
-
 {% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
+See the documentation for more details: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
 {% endif %}
 
 Introduction
