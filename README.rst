@@ -89,7 +89,7 @@ Getting started
     # Add a repo for github at https://github.com/new 
     cd the_best_program # folder with the new template code
     git init
-    git add .gitignore .travis.yml  .editorconfig .github *
+    git add .
     git commit -m 'The beginning of something great'
     git remote add origin git@github.com:happykhan/the-best-program.git
     git push -u origin master
