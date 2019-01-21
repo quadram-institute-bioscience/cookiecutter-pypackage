@@ -69,9 +69,45 @@ Then:
 * Add a `requirements.txt` file that specifies the packages you will need for
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Activate your project on `pyup.io`_.
+* **If you can change the default values for projects in cookiecutter.json**
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Register: https://packaging.python.org/distributing/#register-your-project
+
+Worked Example
+--------------
+
+    cd ~/code # Some directory where you want your code
+    pip install -U cookiecutter
+    cookiecutter https://github.com/happykhan/qi-python-package    
+    # Follow the cookiecutter interactive prompts 
+
+full_name [Nabil-Fareed Alikhan]: 
+email [nabil-fareed.alikhan@quadram.ac.uk]: 
+github_username [happykhan]: 
+project_name [QI python project]: The Best program 
+project_slug [the_best_program]: 
+project_short_description [This project does the bioinformatics]: Takes reads and writes nature papers. 
+pypi_username [happykhan]: 
+version [0.1.0]: 
+use_pytest [n]: 
+use_pypi_deployment_with_travis [y]: 
+add_pyup_badge [n]: y
+Select command_line_interface:
+1 - Click
+2 - No command-line interface
+Choose from 1, 2 (1, 2) [1]: 
+create_author_file [y]: 
+Select open_source_license:
+1 - GNU General Public License v3
+2 - MIT license
+3 - BSD license
+4 - ISC license
+5 - Apache Software License 2.0
+6 - Not open source
+Choose from 1, 2, 3, 4, 5, 6 (1, 2, 3, 4, 5, 6) [1]: 
+
+
 
 For more details, see the `cookiecutter-pypackage tutorial`_.
 
