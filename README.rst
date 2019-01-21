@@ -17,7 +17,6 @@ Features
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
-* pyup.io
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
@@ -86,7 +85,7 @@ Getting started
     # Add a repo for github at https://github.com/new 
     cd the_best_program # folder with the new template code
     git init
-    git add .gitignore .travis.yml  *
+    git add .gitignore .travis.yml  .editorconfig .github *
     git commit -m 'The beginning of something great'
     git remote add origin git@github.com:happykhan/the-best-program.git
     git push -u origin master
@@ -97,6 +96,7 @@ Getting started
     pip install -r requirements_dev.txt
     # Add the repo in https://readthedocs.org/dashboard/import/
     # Add the repo in https://pyup.io/account/repos/add/ 
+    # If you're developing for Windows, add your repo to appveyor https://ci.appveyor.com/projects
     
 
 Now start writing code, be sure to commit changes to GitHub regularly, write tests (run with `python setup.py  test`), and document your program. When you want to package your project on pypi, try the following:
