@@ -2,6 +2,8 @@
 QI Python template
 ==================
 
+|Linux| |Windows| |Dependencies|
+
 Python package template for bioinformatics software. Based on Cookiecutter_. Forked from https://github.com/audreyr/cookiecutter-pypackage/
 
 * GitHub repo: https://github.com/happykhan/qi-python-package
@@ -22,26 +24,6 @@ Features
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
 
-Build Status
--------------
-
-Linux:
-
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
-
-Windows:
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/happykhan/qi-python-package?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/happykhan/qi-python-package/branch/master
-    :alt: Windows build status on Appveyor
-
-Security & Dependencies:
-
-.. image:: https://pyup.io/repos/github/happykhan/qi-python-package/shield.svg
-     :target: https://pyup.io/repos/github/happykhan/qi-python-package/
-     :alt: Updates
 
 Quickstart
 ----------
@@ -140,3 +122,15 @@ For more details, see the `cookiecutter-pypackage tutorial`_.
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
 .. _Docker: https://hub.docker.com
+
+.. |Linux| image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
+    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+    :alt: Linux build status on Travis CI
+
+.. |Windows| image:: https://ci.appveyor.com/api/projects/status/github/happykhan/qi-python-package?branch=master&svg=true
+    :target: https://ci.appveyor.com/project/happykhan/qi-python-package/branch/master
+    :alt: Windows build status on Appveyor
+
+.. |Dependencies| image:: https://pyup.io/repos/github/happykhan/qi-python-package/shield.svg
+     :target: https://pyup.io/repos/github/happykhan/qi-python-package/
+     :alt: Updates
