@@ -76,6 +76,8 @@ Then:
 
 Worked Example
 --------------
+For more details, see the `cookiecutter-pypackage tutorial`_. 
+
 Getting started
 
 .. code-block:: bash
@@ -110,12 +112,20 @@ Now start writing code, be sure to commit changes to GitHub regularly, write tes
     python3 setup.py sdist bdist_wheel
     # Upload to pypi using twine.
     twine upload  dist/*
+    
+Everyone can now install your program in one line, using pip `pip install the-best-program`.    
+You can also get your program into Docker:
 
-Everyone can now install your program in one line, using pip `pip install the-best-program`
+.. code-block:: bash
 
+    docker  build -t thebestprogram .
+    docker login
+    docker tag thebestprogram happykhan/thebestprogram:0.1.0
+    docker push happykhan/best:0.1.0
 
-
+You can also set up automatic hooks, that build a new container on every GitHub commit see hub.docker.com
 For more details, see the `cookiecutter-pypackage tutorial`_.
+
 
 .. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
 
