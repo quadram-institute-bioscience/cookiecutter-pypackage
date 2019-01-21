@@ -1,18 +1,13 @@
-======================
-Cookiecutter PyPackage
-======================
+==================
+QI Python template
+==================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
-     :alt: Updates
+|Linux| |Windows| |Dependencies|
 
-.. image:: https://travis-ci.org/happykhan/qi-python-package.svg?branch=master
-    :target: https://travis-ci.org/happykhan/qi-python-package     
+Python package template for bioinformatics software. Based on Cookiecutter_. Forked from https://github.com/audreyr/cookiecutter-pypackage/
 
-Cookiecutter_ template for a Python package.
-
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
+* GitHub repo: https://github.com/happykhan/qi-python-package
+* Cookiecutter Documentation: https://cookiecutter-pypackage.readthedocs.io/
 * Free software: BSD license
 
 Features
@@ -22,26 +17,13 @@ Features
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
-* Bumpversion_: Pre-configured version bumping with a single command
+* Dockerfile included.
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
-Build Status
--------------
 
-Linux:
-
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
-
-Windows:
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
-    :alt: Windows build status on Appveyor
 
 Quickstart
 ----------
@@ -68,74 +50,67 @@ Then:
 * Add a `requirements.txt` file that specifies the packages you will need for
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Activate your project on `pyup.io`_.
+* Activate your project on `Docker`_.
+* If you're developing for Windows, add your repo to appveyor https://ci.appveyor.com/projects
+* **If you can change the default values for projects in cookiecutter.json**
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Register: https://packaging.python.org/distributing/#register-your-project
 
+Worked Example
+--------------
+For more details, see the `cookiecutter-pypackage tutorial`_. 
+
+Getting started
+
+.. code-block:: bash
+
+    cd ~/code # Some directory where you want your code
+    pip install -U cookiecutter
+    cookiecutter https://github.com/happykhan/qi-python-package    
+    # Follow the cookiecutter interactive prompts; I created a project called 'the best program'
+    # Add a repo for github at https://github.com/new 
+    cd the_best_program # folder with the new template code
+    git init
+    git add .
+    git commit -m 'The beginning of something great'
+    git remote add origin git@github.com:happykhan/the-best-program.git
+    git push -u origin master
+    # Go to https://travis-ci.org/account/repositories & add the repo. e.g. 'the-best-program'
+    # Create a virtualenv 
+    virtualenv -p /usr/bin/python3 .venv
+    source .venv/bin/activate
+    pip install -r requirements_dev.txt
+    # Add the repo in https://readthedocs.org/dashboard/import/
+    # Add the repo in https://pyup.io/account/repos/add/ 
+    # Add the repo in https://hub.docker.com
+    # If you're developing for Windows, add your repo to appveyor https://ci.appveyor.com/projects
+    
+
+Now start writing code, be sure to commit changes to GitHub regularly, write tests (run with `python setup.py  test`), and document your program. When you want to package your project on pypi, try the following:
+
+.. code-block:: bash
+
+    # Create wheels/binaries for pypi
+    python3 setup.py sdist bdist_wheel
+    # Upload to pypi using twine.
+    twine upload  dist/*
+    
+Everyone can now install your program in one line, using pip `pip install the-best-program`.    
+You can also get your program into Docker:
+
+.. code-block:: bash
+
+    docker  build -t thebestprogram .
+    docker login
+    docker tag thebestprogram happykhan/thebestprogram:0.1.0
+    docker push happykhan/best:0.1.0
+
+You can also set up automatic hooks, that build a new container on every GitHub commit see hub.docker.com
 For more details, see the `cookiecutter-pypackage tutorial`_.
 
+
 .. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
-
-Not Exactly What You Want?
---------------------------
-
-Don't worry, you have options:
-
-Similar Cookiecutter Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* `Nekroze/cookiecutter-pypackage`_: A fork of this with a PyTest test runner,
-  strict flake8 checking with Travis/Tox, and some docs and `setup.py` differences.
-
-* `tony/cookiecutter-pypackage-pythonic`_: Fork with py2.7+3.3 optimizations.
-  Flask/Werkzeug-style test runner, ``_compat`` module and module/doc conventions.
-  See ``README.rst`` or the `github comparison view`_ for exhaustive list of
-  additions and modifications.
-
-* `ardydedase/cookiecutter-pypackage`_: A fork with separate requirements files rather than a requirements list in the ``setup.py`` file.
-
-* `lgiordani/cookiecutter-pypackage`_: A fork of Cookiecutter that uses Punch_ instead of Bumpversion_ and with separate requirements files.
-
-* Also see the `network`_ and `family tree`_ for this repo. (If you find
-  anything that should be listed here, please add it and send a pull request!)
-  
-Support this Project
-~~~~~~~~~~~~~~~~~~~~~
-
-You can take our detailed course that covers all the features of this template, which has the added bonus of funding this project:
-
-.. image:: https://www.pydanny.com/static/packaging-course.jpg
-   :name: Creating and Distributing Python Packages image
-   :align: center
-   :alt: Creating and Distributing Python Packages
-   :target: https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages-es
-
-También disponible en español:
-
-.. image:: https://www.pydanny.com/static/packaging-course-es.jpg
-   :name: Creating and Distributing Python Packages ES image
-   :align: center
-   :alt: Creating and Distributing Python Packages ES
-   :target: https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages-es
-
-Fork This / Create Your Own
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have differences in your preferred setup, I encourage you to fork this
-to create your own version. Or create your own; it doesn't strictly have to
-be a fork.
-
-* Once you have your own version working, add it to the Similar Cookiecutter
-  Templates list above with a brief description.
-
-* It's up to you whether or not to rename your fork/own version. Do whatever
-  you think sounds good.
-
-Or Submit a Pull Request
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-I also accept pull requests on this, if they're small, atomic, and if they
-make my own packaging experience better.
 
 
 .. _Travis-CI: http://travis-ci.org/
@@ -146,11 +121,16 @@ make my own packaging experience better.
 .. _Bumpversion: https://github.com/peritus/bumpversion
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
+.. _Docker: https://hub.docker.com
 
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _`lgiordani/cookiecutter-pypackage`: https://github.com/lgiordani/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
-.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
-.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members
+.. |Linux| image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
+    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+    :alt: Linux build status on Travis CI
+
+.. |Windows| image:: https://ci.appveyor.com/api/projects/status/github/happykhan/qi-python-package?branch=master&svg=true
+    :target: https://ci.appveyor.com/project/happykhan/qi-python-package/branch/master
+    :alt: Windows build status on Appveyor
+
+.. |Dependencies| image:: https://pyup.io/repos/github/happykhan/qi-python-package/shield.svg
+     :target: https://pyup.io/repos/github/happykhan/qi-python-package/
+     :alt: Updates
