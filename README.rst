@@ -99,7 +99,7 @@ Getting started
     # Add the repo in https://pyup.io/account/repos/add/ 
     
 
-Now start writing code, be sure to commit changes to github regularly, write tests, and document your program. When you want to package your project, try the following:
+Now start writing code, be sure to commit changes to GitHub regularly, write tests (run with `python setup.py  test`), and document your program. When you want to package your project on pypi, try the following:
 
 .. code-block:: bash
 
@@ -108,8 +108,9 @@ Now start writing code, be sure to commit changes to github regularly, write tes
     # Upload to pypi using twine.
     twine upload  dist/*
 
+Everyone can now install your program in one line, using pip `pip install the-best-program`
 
-    
+
 
 For more details, see the `cookiecutter-pypackage tutorial`_.
 
