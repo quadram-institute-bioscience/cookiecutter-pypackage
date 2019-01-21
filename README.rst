@@ -69,6 +69,7 @@ Then:
   your project and their versions. For more info see the `pip docs for requirements files`_.
 * Activate your project on `pyup.io`_.
 * Activate your project on `Docker`_.
+* If you're developing for Windows, add your repo to appveyor https://ci.appveyor.com/projects
 * **If you can change the default values for projects in cookiecutter.json**
 
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
